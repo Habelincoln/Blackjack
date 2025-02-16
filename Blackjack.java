@@ -1057,7 +1057,7 @@ public class Blackjack extends JPanel implements ActionListener {
                 
             }
             //if no blackjack or bust, display winner
-            if (dealerHand >= 16 && dealerHand < 21 && playerHand < 21) {
+            if (dealerHand >= 17 && dealerHand < 21 && playerHand < 21) {
                 if (playerHand > dealerHand) {
                     updateScores(game, "WON", Integer.toString(dealerHand));
                     winner = 0;
@@ -1425,7 +1425,7 @@ public class Blackjack extends JPanel implements ActionListener {
         }
     }
 
-    public void dealHouse(JPanel game, boolean firstCard, boolean till16, JPanel menu, JButton settings, JButton hint, JButton restart, JButton soundToggle, JButton musicToggle, JButton darkMode, JButton undo, JButton confirmBet, JButton resetBet, JButton hit, JButton stand, JButton doubleDown, JButton split, JButton white, JButton black, JButton pink, JButton yellow, JButton green, JButton blue, JButton teal, JButton red, JButton nextRound) {
+    public void dealHouse(JPanel game, boolean firstCard, boolean till17, JPanel menu, JButton settings, JButton hint, JButton restart, JButton soundToggle, JButton musicToggle, JButton darkMode, JButton undo, JButton confirmBet, JButton resetBet, JButton hit, JButton stand, JButton doubleDown, JButton split, JButton white, JButton black, JButton pink, JButton yellow, JButton green, JButton blue, JButton teal, JButton red, JButton nextRound) {
        
        if (winner !=3) {
         return;
@@ -1488,9 +1488,9 @@ public class Blackjack extends JPanel implements ActionListener {
         } else {
             System.out.print("deck empty");
         }
-        if (till16 && winner == 3) {
+        if (till17 && winner == 3) {
 
-            if (dealerHand < 16) {
+            if (dealerHand < 17) {
                 Timer timer = new Timer(1000, new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
