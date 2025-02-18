@@ -1504,12 +1504,23 @@ public class Blackjack extends JPanel implements ActionListener {
             } else {
                 if (dealerAces >= 1 && dealerHand < 21) {
                     dealerHand -= dealerAces * 10;
-                }
+                    Timer timer = new Timer(1000, new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            if (winner ==3) {
+                            dealHouse(game, false, true, menu, settings, hint, restart, soundToggle, musicToggle, darkMode, undo, confirmBet, resetBet, hit, stand, doubleDown, split, white, black, pink, yellow, green, blue, teal, red, nextRound);
+                            }
+                        }
+                    });
+                    timer.setRepeats(false);
+                    timer.start();
+                } else {
                     try {
                             checkWin(game, menu, settings, hint, restart, soundToggle, musicToggle, darkMode, undo, confirmBet, resetBet, hit, stand, doubleDown, split, white, black, pink, yellow, green, blue, teal, red, nextRound);
                     } catch (InterruptedException ex) {
                             ex.printStackTrace(System.err);
                     }
+                }
                 
             }
         }
